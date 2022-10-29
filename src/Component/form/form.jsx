@@ -49,7 +49,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div className="form-container">
+      <div className="form-container form">
         <input
           type="text"
           placeholder="Enter Your todo"

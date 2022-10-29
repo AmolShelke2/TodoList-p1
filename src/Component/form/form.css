@@ -5,9 +5,9 @@
 }
 
 .form {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   max-width: 100%;
-  width: 400px;
+  width: 500px;
 }
 
 .input {
@@ -62,9 +62,13 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .form-container {
     top: 8rem;
     left: 2rem;
+  }
+
+  .form {
+    width: 400px;
   }
 }
