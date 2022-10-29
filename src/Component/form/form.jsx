@@ -1,5 +1,5 @@
-import React from "react";
-import "./form.css";
+import React from 'react';
+import './form.css';
 
 class Form extends React.Component {
   constructor() {
@@ -7,22 +7,22 @@ class Form extends React.Component {
     this.state = {
       todos: [
         {
-          task: "Learn React JS",
+          task: 'Learn React JS',
           id: 1,
           completed: false,
         },
 
         {
-          task: "Watch Anime",
+          task: 'Watch Anime',
           id: 2,
           completed: false,
         },
       ],
-      todo: "",
+      todo: '',
     };
   }
 
-  inputChangeHandler = (event) => {
+  inputChangeHandler = event => {
     this.setState({ todo: event.target.value });
   };
 
@@ -34,16 +34,16 @@ class Form extends React.Component {
     };
     this.setState({
       todos: [...this.state.todos, newTask],
-      todo: "",
+      todo: '',
     });
   };
 
   completeTodo = () => {
-    const todoLists = document.querySelectorAll(".todo-list");
-    todoLists.forEach((todoList) =>
-      todoList.addEventListener("click", () => {
-        todoList.classList.add("completed");
-      })
+    const todoLists = document.querySelectorAll('.todo-list');
+    todoLists.forEach(todoList =>
+      todoList.addEventListener('click', () => {
+        todoList.classList.add('completed');
+      }),
     );
   };
 
@@ -56,17 +56,17 @@ class Form extends React.Component {
           className="input"
           id="input"
           value={this.state.todo}
-          onKeyDown={(event) => {
-            if (event.key === "Enter") {
+          onKeyDown={event => {
+            if (event.key === 'Enter') {
               this.addTask(this.state.todo);
-              this.setState({ todo: "" });
+              this.setState({ todo: '' });
             }
           }}
           onChange={this.inputChangeHandler}
         />
 
         <ul className="todos">
-          {this.state.todos.map((todo) => (
+          {this.state.todos.map(todo => (
             <li className="todo-list">
               {todo.task}
               <a href="#" onClick={this.completeTodo}>
