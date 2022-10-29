@@ -38,31 +38,16 @@ class Form extends React.Component {
     });
   };
 
-  toggleComplete = (itemId) => {
-    const todos = this.state.todos.map((todo) => {
-      if (todo.id === itemId) {
-        todo.completed = !todo.completed;
-      }
-      return todo;
-    });
-    this.setState({ todos, todo: "" });
-  };
-
-  clearCompleted = (e) => {
-    e.preventDefault();
-    const todos = this.state.todos.map((todo) => ({
-      ...todo,
-      completed: false,
-    }));
-
-    this.setState({
-      todos,
-    });
+  completeTodo = () => {
+    const todoLists = document.querySelectorAll(".todo-list");
+    todoLists.forEach((todoList) =>
+      todoList.addEventListener("click", () => {
+        todoList.classList.add("completed");
+      })
+    );
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <div className="form-container">
         <input
@@ -70,6 +55,7 @@ class Form extends React.Component {
           placeholder="Enter Your todo"
           className="input"
           id="input"
+          value={this.state.todo}
           onKeyDown={(event) => {
             if (event.key === "Enter") {
               this.addTask(this.state.todo);
@@ -81,7 +67,12 @@ class Form extends React.Component {
 
         <ul className="todos">
           {this.state.todos.map((todo) => (
-            <li className="todo-list">{todo.task}</li>
+            <li className="todo-list">
+              {todo.task}
+              <a href="#" onClick={this.completeTodo}>
+                x
+              </a>
+            </li>
           ))}
         </ul>
       </div>
