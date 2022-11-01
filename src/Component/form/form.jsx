@@ -32,10 +32,12 @@ class Form extends React.Component {
       id: Date.now() + Math.random(),
       completed: false,
     };
-    this.setState({
-      todos: [...this.state.todos, newTask],
-      todo: '',
-    });
+
+    if (newTask.task === '') {
+      alert('Please add a todo task');
+    } else {
+      this.setState({ todos: [...this.state.todos, newTask] });
+    }
   };
 
   completeTodo = () => {
@@ -48,6 +50,7 @@ class Form extends React.Component {
   };
 
   render() {
+    console.log(this.state.todos);
     return (
       <div className="form-container form">
         <input
