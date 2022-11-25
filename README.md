@@ -4,17 +4,19 @@ This Project is a assessment given by Habuild for front-end Developer role. to c
 
 I have Just Started Learning React and It was a good experience for me I created this project all by myself.
 
-and it completed.
+#### Updating it.
+
+First I created this Todo list app with Class component And Now I have converted it by adding functional components and useState hook.
 
 <hr>
 
 ## Live Preview.
+
 [TodoList-p1](https://todolist-p1.vercel.app/)
 
 <hr>
 
 ## Preview.
-
 
 https://user-images.githubusercontent.com/95171638/198834908-43d5d8a1-84c2-49b0-a556-eb41e4ca76c9.mp4
 
